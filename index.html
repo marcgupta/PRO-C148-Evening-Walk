@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+<body>
+    <a-assets timeout="10000">
+
+        <a-asset-item id="road" src="./models/road.glb"></a-asset-item>
+        <a-asset-item id="lamp" src="./models/Lamp post.glb"></a-asset-item>
+        <a-asset-item id="bench" src="./models/Bench.glb"></a-asset-item>
+        <a-asset-item id="kitten" src="./models/Kitten.glb"></a-asset-item>
+        <a-asset-item id="girl" src="./models/model.glb"></a-asset-item>
+  
+        <img id="bg" src="night.jpg">
+  
+      </a-assets>
+    <a-scene background="color:#2A281E">
+        <a-camera position="0 1.8 -1.4"></a-camera>
+        <a-plane
+        src="#bg"
+        position="0 1.5 -5.5"
+        rotation="0 0 0"
+        width="5"
+        height="4"
+      ></a-plane>
+      <a-entity>
+        <a-entity position="0 0 -4.6" rotation="0 90 0" scale="02 03 02" gltf-model="#road" shadow="receive: true;">
+        </a-entity>
+        <a-entity>
+            <a-entity position="-1 0 -5.2" rotation="0 90 0" scale="0.1 0.1 0.1" gltf-model="#lamp" shadow="cast: true;">
+            </a-entity></a-entity>
+        <a-entity>
+            <a-entity scale="0.005 0.005 0.005"
+            gltf-model="#bench"
+            position="1 0.3 -5"
+            shadow="cast:true;">
+            </a-entity>
+        </a-entity>
+        <a-entity light="type: point; castShadow: true; color: #e6ca14; intensity: 2.35" position="-1.2 1.7 -4.5"></a-entity>
+        <a-entity light="type: ambient;"></a-entity>
+        </a-entity>
+        <a-entity>
+            <a-entity scale="0.02 0.02 0.02"
+            gltf-model="#kitten"
+            rotation="0 28 0"
+            position="1 0.5 -4.3"
+            shadow="cast:true;">
+            </a-entity>
+            <a-entity>
+                <a-entity scale="0.12 0.12 0.12"
+                gltf-model="#girl"
+                position="-0.2 0.1 -4.3"
+                shadow="cast:true;">
+                </a-entity>
+        </a-scene>
+</body>
+</html>
